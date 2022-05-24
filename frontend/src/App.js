@@ -1,6 +1,7 @@
 import './App.css';
 import Gun from 'gun'
-import {useState} from 'react' 
+import {useState, useEffect} from 'react' 
+import MessageForm from './MessageForm/MessageForm';
 
 const gun = Gun({
   peers: ['http:localhost:4050/gun'] // access relay node peer from relay-server.js
@@ -8,19 +9,38 @@ const gun = Gun({
 
 function App() {
   const [message, setMessage] = useState() // update the webpage if this text changes
-
-  const updateMessage = (event) => {
-    let v = event.target.value
-    console.log(`Update the message to: ${v}`)
-    gun.get('messge').put( // write key-value pair to the database object "message"
-      {message: v}
-      ) // Edit the value in our db
-    setMessage(v) //update the react state and rerender the page
+  const [dbMessages, setDbMessages] = useState()
+  
+  // setDbMessages(<li>Empty</li>)
+  
+  const getMessagesFromDb = (dbItem) => {
+      let out = []
+      let list = gun.get(dbItem)
+      if (list) {
+          //loop through the entries in the database list
+          list.map().on((item, id) => {
+              // add from db to vs-variable if not empty
+              if (item) {
+                  out.push(item)
+                  console.log(id)
+              }
+          })
+      }
+      return out
   }
+
+  let dbitems = getMessagesFromDb("messages")
 
   return (
     <div className="App">
-      <input value={message} onChange={updateMessage}></input>
+      <div>Last sent message: {message}</div>
+      <MessageForm setMessage={setMessage} gun={gun}/>
+      <div>Database content:</div>
+            <ul>
+                {dbitems.map((v, k) => {
+                  return <li key={k}>{v}</li>
+                })}
+            </ul>
     </div>
   );
 }

@@ -4,6 +4,11 @@ A decentralized chat app that uses peer-to-peer communication without a central 
 
 ## Setup
 Install node.js and npm.
+Install bootstrap vor visual components.
+```bash
+npm install -g react-bootstrap bootstrap express gun
+```
+
 Afterwards run the following commands in two seperate terminals:
 
 - start the relay-server
