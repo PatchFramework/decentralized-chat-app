@@ -1,8 +1,10 @@
 import React from 'react'
+import "./ChatRoom.css"
 
 import { useState, useEffect, useReducer } from 'react'
 import MessageForm from '../MessageForm/MessageForm';
 import TimeConverter from '../utility/TimeConverter';
+import ChatHistory from '../ChatHistory/ChatHistory';
 
 const stateMessages = []
 const reducer = (state, message) => {
@@ -35,17 +37,11 @@ function ChatRoom(props) {
     }, [])
 
     return (
-        <div>
+        <div className='ChatRoom'>
             {message && <div>Last sent message: {message}</div>}
-            <MessageForm gun={props.gun} setMessage={setMessage}/>
-            <div>Database content:</div>
-            <ul>
-                {console.log(state)}
-                {state && state.map((v, k) => {
-                    console.log(`database key: ${k} value: ${v}`)
-                    return <li key={k}>{TimeConverter(v.time)} - {v.data}</li>
-                })}
-            </ul></div>
+            <ChatHistory id="chatHistory" messages={state} />
+            <MessageForm gun={props.gun} setMessage={setMessage} />
+        </div>
     )
 }
 

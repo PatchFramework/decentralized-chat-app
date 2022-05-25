@@ -16,6 +16,8 @@ function MessageForm(props) {
     var v = "" //tracks the user input
 
     const addMessage = () => {
+        
+        if (v !== "" && v !== undefined) {
         // read the text from the input box, if the button is clicked
         console.log(`Add the message: ${v}`)
         let dbMessages = props.gun.get("messages")
@@ -27,6 +29,7 @@ function MessageForm(props) {
         })
         
         props.setMessage(v) //set the message state and rerender the page
+        }
     }
 
     return (

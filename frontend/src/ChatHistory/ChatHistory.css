@@ -1,0 +1,14 @@
+.scrollable-chat {
+    display: flex;
+    flex-direction: column;
+    background-color: #efefef;
+    height: 80vh;
+    overflow: auto;
+    text-align: justify;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+.chat-bubble {
+    background-color: white;
+}

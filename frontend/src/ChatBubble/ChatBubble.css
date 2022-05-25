@@ -1,0 +1,62 @@
+.bubble-box {
+    align-self: flex-end;
+    width: 300px;
+    margin: 15px 15px 15px 15px;
+    border-radius: 25px;
+    background: #46a55c;
+    color: #fff;
+    padding: 12px 13px 9px 12px;
+    font-weight: 900;
+    font-family: arial;
+    position: relative;
+    z-index: 1;
+    word-wrap: break-word;
+  }
+
+.bubble-left {
+    align-self: flex-start;
+}
+
+.bubble-right {
+    align-self: flex-end;
+}
+.bubble-right:before {
+    align-self: flex-start;
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-right: 30px solid transparent ;
+    border-left: 30px solid #46a55c ;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid #46a55c;
+    right: -20px;
+    bottom: 0px;
+    z-index: -1;
+  }
+
+.bubble-left:before {
+    align-self: flex-end;
+    content: "";    
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 30px solid transparent ;
+    border-right: 30px solid #46a55c;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid #46a55c;
+    left: -20px;
+    bottom: 0px;
+    z-index: -1;
+  }
+
+  .content {
+      align-self: center;
+      width: 280    ;
+  }
+
+  .time {
+      font-size: 9pt;
+      color: rgb(235, 235, 235);
+      text-align: right;
+  }
