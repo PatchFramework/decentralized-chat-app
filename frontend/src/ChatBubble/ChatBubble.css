@@ -50,6 +50,10 @@
     z-index: -1;
   }
 
+  .sender {
+      align-self: flex-start;
+      font-size: 15px;
+  }
   .content {
       align-self: center;
       width: 280    ;

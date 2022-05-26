@@ -16,14 +16,15 @@ function MessageForm(props) {
     var v = "" //tracks the user input
 
     const addMessage = () => {
-        
+
         if (v !== "" && v !== undefined) {
         // read the text from the input box, if the button is clicked
         console.log(`Add the message: ${v}`)
-        let dbMessages = props.gun.get("messages")
+        let dbMessages = props.gun.get(props.roomId)
 
         // .set will append the message to a list; .put would replace it
         dbMessages.set({
+            sender: props.user,
             time: Date.now(),
             data: v
         })

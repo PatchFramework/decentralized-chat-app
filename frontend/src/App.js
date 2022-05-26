@@ -11,7 +11,7 @@ function App() {
   
   return (
     <div className="App">
-      <ChatRoom gun={gun} />
+      <ChatRoom gun={gun} roomId={"messages"} />
     </div>
   );
 }
