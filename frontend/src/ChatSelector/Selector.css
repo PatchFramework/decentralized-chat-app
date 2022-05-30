@@ -1,0 +1,30 @@
+.box{
+    display: flex;
+    justify-content: center;
+    width: 70vw;
+    background-color: #46a55c;
+    border-radius: 15px;
+    flex-direction: column;
+    height: 80vh;
+    margin: 0 auto;
+    margin-top: 10vh;
+}
+
+.select{
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+    display: flex; 
+    justify-content: center;
+}
+
+.input{
+    background-color:white;
+    border-radius: 10px;
+}
+
+.chatroom{
+    padding: 0.5cm;
+}

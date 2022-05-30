@@ -2,6 +2,9 @@ import './App.css';
 import Gun from 'gun'
 
 import ChatRoom from './ChatRoom/ChatRoom';
+import Selector from  './ChatSelector/Selector';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+
 
 const gun = Gun({
   peers: ['http:localhost:4050/gun'] // access relay node peer from relay-server.js
@@ -10,9 +13,14 @@ const gun = Gun({
 function App() {
   
   return (
-    <div className="App">
-      <ChatRoom gun={gun} roomId={"messages"} />
-    </div>
+    <BrowserRouter>
+      <Switch>
+      <Route path="/" exact component={Selector} />
+        <div className="App">
+          <ChatRoom gun={gun} />
+        </div>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
