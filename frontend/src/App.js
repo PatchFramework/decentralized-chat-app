@@ -19,7 +19,7 @@ function App() {
       <Route path="/" exact element={
         <Selector />
         } />
-      <Route path="/chatroom" exact element={
+      <Route path="/chatroom/:roomId" exact element={
       <ChatRoom gun={gun} roomId={"messages"} />
       } />
       </Routes>

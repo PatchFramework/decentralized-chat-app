@@ -44,7 +44,7 @@ function ChatRoom(props) {
     return (
         <div className='ChatRoom'>
             <ChatHistory id="chatHistory" messages={state} userColors={userColors} />
-            <MessageForm gun={props.gun} roomId={props.roomId} user={"Patrick"} />
+            <MessageForm gun={props.gun} roomId={props.roomId} user={"Dieter"} />
         </div>
     )
 }
