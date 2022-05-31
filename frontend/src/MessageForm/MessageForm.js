@@ -16,7 +16,7 @@ function MessageForm(props) {
     var v = "" //tracks the user input
 
     const addMessage = () => {
-
+        console.log("Adding message", v, " from ", props.user, " to chatroom ", props.roomId);
         if (v !== "" && v !== undefined) {
         // read the text from the input box, if the button is clicked
         console.log(`Add the message: ${v}`)

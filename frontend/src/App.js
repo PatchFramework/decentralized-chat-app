@@ -2,8 +2,8 @@ import './App.css';
 import Gun from 'gun'
 
 import ChatRoom from './ChatRoom/ChatRoom';
-import Selector from  './ChatSelector/Selector';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Selector from './ChatSelector/Selector';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 const gun = Gun({
@@ -11,16 +11,20 @@ const gun = Gun({
 })
 
 function App() {
-  
+
   return (
+    <div className="App">
     <BrowserRouter>
-      <Switch>
-      <Route path="/" exact component={Selector} />
-        <div className="App">
-          <ChatRoom gun={gun} />
-        </div>
-      </Switch>
+      <Routes>
+      <Route path="/" exact element={
+        <Selector />
+        } />
+      <Route path="/chatroom" exact element={
+      <ChatRoom gun={gun} roomId={"messages"} />
+      } />
+      </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 
