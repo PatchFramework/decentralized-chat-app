@@ -1,6 +1,6 @@
 import React from 'react'
 import "./ChatRoom.css"
-
+import ChatNavbar from '../ChatNavbar/ChatNavbar';
 import { useState, useEffect, useReducer } from 'react'
 import MessageForm from '../MessageForm/MessageForm';
 import TimeConverter from '../utility/TimeConverter';
@@ -48,6 +48,7 @@ function ChatRoom(props) {
 
     return (
         <div className='ChatRoom'>
+            <ChatNavbar name={roomId}/>
             <ChatHistory id="chatHistory" messages={state} userColors={userColors} />
             <MessageForm gunRoom={chatroom} user={"Dieter"} />
         </div>
