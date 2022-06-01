@@ -13,18 +13,27 @@
 .select{
     display: flex;
     justify-content: center;
+    font-size: x-large;
 }
 
 .form{
     display: flex; 
-    justify-content: center;
+    flex-direction: column;
+    align-self: center;
 }
 
 .input{
     background-color:white;
     border-radius: 10px;
+    margin-left: 10px;
+    float: right;
 }
 
 .chatroom{
     padding: 0.5cm;
+}
+
+.name{
+    padding: 0.5cm;
+    text-align: left;
 }
