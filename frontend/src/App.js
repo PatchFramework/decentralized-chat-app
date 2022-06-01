@@ -11,16 +11,27 @@ const gun = Gun({
 })
 
 function App() {
+  // save all available chatrooms
+  const availableRooms = []
+  const addRoom = (dbId, room) => {
+    if ( !(room in availableRooms) ) {
+      availableRooms.push(room)
+    } 
+    
+  }
+  // loop through the "chatrooms" sub-nodes in the DB and add all rooms
+  gun.get("chatrooms").map().once(addRoom)
+  //console.log("available rooms", availableRooms);
 
   return (
     <div className="App">
     <BrowserRouter>
       <Routes>
       <Route path="/" exact element={
-        <Selector />
+        <Selector availableRooms={availableRooms}/>
         } />
       <Route path="/chatroom/:roomId" exact element={
-      <ChatRoom gun={gun} roomId={"messages"} />
+      <ChatRoom gun={gun} />
       } />
       </Routes>
     </BrowserRouter>

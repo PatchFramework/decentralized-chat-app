@@ -6,10 +6,15 @@ import MessageForm from '../MessageForm/MessageForm';
 import TimeConverter from '../utility/TimeConverter';
 import RandomColor from '../utility/RandomColor';
 import ChatHistory from '../ChatHistory/ChatHistory';
-
+import { useParams } from 'react-router-dom';
 
 
 function ChatRoom(props) {
+    // get the requested room id from the URL parameters
+    const { roomId } = useParams();
+    // save the database slot of the chatroom
+    const chatroom = props.gun.get("chatrooms").get(roomId)
+
     // save user message and rerender if it is reset
     const [userColors, setUserColors] = useState({})
 
@@ -27,11 +32,11 @@ function ChatRoom(props) {
 
     // Fetch the messages for the chat roomId form the database once, on first page render
     useEffect(() => {
-        let list = props.gun.get(props.roomId) // can be replaced with the key for the respective chat room, later
-        if (list) {
-            console.log(list)
+        // can be replaced with the key for the respective chat room, later
+        if (chatroom) {
+            console.log(chatroom)
             //add all messages in database to stateMessages
-            list.map().once((item) => {
+            chatroom.map().once((item) => {
                 dispatch({
                     sender: item.sender,
                     time: item.time,
@@ -44,7 +49,7 @@ function ChatRoom(props) {
     return (
         <div className='ChatRoom'>
             <ChatHistory id="chatHistory" messages={state} userColors={userColors} />
-            <MessageForm gun={props.gun} roomId={props.roomId} user={"Dieter"} />
+            <MessageForm gunRoom={chatroom} user={"Dieter"} />
         </div>
     )
 }
