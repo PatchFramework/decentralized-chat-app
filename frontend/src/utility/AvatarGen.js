@@ -5,7 +5,7 @@ export default function avatarGen(name) {
     return createAvatar(style, {
         seed: name,
         dataUri: true,
-        size: 32,
+        size: 24,
         backgroundColor: '#46a55c',
       })
 }
