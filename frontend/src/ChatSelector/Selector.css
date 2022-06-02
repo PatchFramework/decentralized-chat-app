@@ -10,6 +10,10 @@
     margin-top: 10vh;
 }
 
+.chatroomHeader {
+    font-size: x-large;
+    padding: 5px;
+}
 .select{
     display: flex;
     justify-content: center;

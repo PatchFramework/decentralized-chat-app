@@ -6,7 +6,6 @@ function ChatroomList({chatrooms}) {
     console.log("chatrooms in chatroom list is: ", chatrooms);
     return (
     <div className='chatroomList'>
-        <div>Chatroom List</div>
         {chatrooms && chatrooms.map( (chatroom) => {
             if ( chatroom ) {
                 {console.log("chatrooms", chatrooms)}
