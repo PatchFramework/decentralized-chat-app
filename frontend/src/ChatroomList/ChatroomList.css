@@ -1,0 +1,14 @@
+.chatroomList {
+    align-self: center;
+    width: 90%;
+    background-color: #efefef;
+    height: 50vh;
+    overflow: auto;
+    text-align: justify;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+a {
+    color: white;
+}

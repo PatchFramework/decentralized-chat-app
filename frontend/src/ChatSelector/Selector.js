@@ -1,8 +1,9 @@
 import React from 'react'
 import './Selector.css'
 import { useState } from "react";
+import ChatroomList from '../ChatroomList/ChatroomList';
 
-function Selector() {
+function Selector({ availableRooms }) {
 
   return (
     <div className="box">
@@ -17,6 +18,8 @@ function Selector() {
           <input type="text" name="name" className='input'/>
         </label>
       </form>
+
+      <ChatroomList chatrooms={availableRooms} />
     </div>
   );
 }

@@ -24,4 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # ignore local chat messages
-radata/
+*/radata/
