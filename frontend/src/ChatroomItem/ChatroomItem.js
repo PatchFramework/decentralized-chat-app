@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 function ChatroomItem(props) {
   return (
-    <Link to={`chatroom/${props.name}`}>
+    <Link to={`chatroom/${props.name}`} className="chatroomItemLink">
       <div className='chatroomItem'>
         <div className='chatName'>{props.name}</div>
         <div className='participants'>Participants: {props.participants}</div>

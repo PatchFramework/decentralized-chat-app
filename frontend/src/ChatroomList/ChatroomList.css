@@ -9,6 +9,12 @@
     border-radius: 15px;
 }
 
-a {
-    color: white;
+.chatroomItemLink, .chatroomItemLink:focus, .chatroomItemLink:active {
+    text-decoration: none;
+    color: black;
+}
+
+.chatroomItemLink:hover {
+    color: #46a55c;
+    box-shadow: black 5px;
 }
