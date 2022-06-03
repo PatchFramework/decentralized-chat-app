@@ -13,11 +13,13 @@
 .chatroomHeader {
     font-size: x-large;
     padding: 5px;
+    color: white;
 }
 .select{
     display: flex;
     justify-content: center;
     font-size: x-large;
+    color: white;
 }
 
 .form{
