@@ -27,7 +27,7 @@ function App() {
 
     useEffect(() => {
       window.localStorage.setItem("username", username)
-    })
+    }, [username])
   
 
   useEffect(() => {
