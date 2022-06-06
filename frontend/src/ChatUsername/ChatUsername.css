@@ -1,0 +1,45 @@
+.box{
+    display: flex;
+    justify-content: center;
+    width: 70vw;
+    background-color: #46a55c;
+    border-radius: 15px;
+    flex-direction: column;
+    height: 80vh;
+    margin: 0 auto;
+    margin-top: 10vh;
+}
+
+.chatroomHeader {
+    font-size: x-large;
+    padding: 5px;
+    color: white;
+}
+.select{
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    color: white;
+}
+
+.form{
+    display: flex; 
+    flex-direction: column;
+    align-self: center;
+}
+
+.input{
+    background-color:white;
+    border-radius: 10px;
+    margin-left: 10px;
+    float: right;
+}
+
+.chatroom{
+    padding: 0.5cm;
+}
+
+.name{
+    padding: 0.5cm;
+    text-align: left;
+}
