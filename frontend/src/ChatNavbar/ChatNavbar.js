@@ -20,7 +20,7 @@ const name  = props.name
           <p className="navName">{name}</p>
         </li>
         <li className='navItems logout'>
-        <Link to="/" className="navLink">
+        <Link to="/home" className="navLink">
             <div className="fas fa-right-from-bracket"></div>
             Logout
           </Link>

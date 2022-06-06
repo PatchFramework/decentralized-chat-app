@@ -21,8 +21,14 @@ function App() {
   }
   const [state, dispatch] = useReducer(addRoom, roomState)
 
-  const [username, setUsername] = useState([]);
+  const [username, setUsername] = useState(
+    window.localStorage.getItem("username") || "" ,
+    )
 
+    useEffect(() => {
+      window.localStorage.setItem("username", username)
+    })
+  
 
   useEffect(() => {
     // loop through the "chatrooms" sub-nodes in the DB and add all rooms
@@ -38,13 +44,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" exact element={
+            <ChatroomUsername  usernameinput={setUsername} userobject={username} />
+          } />
+          <Route path="/home" exact element={
             <Selector availableRooms={state} />
           } />
-          <Route path="/chatroom/:roomId" exact element={
+          <Route path="/home/chatroom/:roomId" exact element={
             <ChatRoom gun={gun} userobject={username}/>
-          } />
-          <Route path="/username" exact element={
-            <ChatroomUsername  usernameinput={setUsername} userobject={username} />
           } />
         </Routes>
       </BrowserRouter>

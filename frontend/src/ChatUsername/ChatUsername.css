@@ -1,45 +1,57 @@
-.box{
-    display: flex;
-    justify-content: center;
-    width: 70vw;
+html {
+    height: 100%;
+  }
+
+body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+  
+.username-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
     background-color: #46a55c;
-    border-radius: 15px;
-    flex-direction: column;
-    height: 80vh;
-    margin: 0 auto;
-    margin-top: 10vh;
-}
-
-.chatroomHeader {
-    font-size: x-large;
-    padding: 5px;
-    color: white;
-}
-.select{
-    display: flex;
-    justify-content: center;
-    font-size: x-large;
-    color: white;
-}
-
-.form{
-    display: flex; 
-    flex-direction: column;
-    align-self: center;
-}
-
-.input{
-    background-color:white;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
-    margin-left: 10px;
-    float: right;
-}
-
-.chatroom{
-    padding: 0.5cm;
-}
-
-.name{
-    padding: 0.5cm;
-    text-align: left;
-}
+  }
+  
+  .username-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+  
+  .username-box .user-box {
+    position: relative;
+  }
+  
+  .username-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .username-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+ 

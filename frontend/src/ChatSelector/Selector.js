@@ -17,7 +17,7 @@ function Selector({ availableRooms }) {
       const chatroomRef = useRef();
       var requestedRoom = ""
       const goToRoom = () => {
-        navigator(`/chatroom/${requestedRoom}`, { replace: true })
+        navigator(`chatroom/${requestedRoom}`, { replace: true })
       }
 
   return (

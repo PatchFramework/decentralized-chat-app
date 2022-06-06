@@ -2,6 +2,8 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import "./ChatUsername.css"
+import Button from 'react-bootstrap/Button'
+
 function ChatroomUsername(props) {
 
     const username = props.userobject
@@ -17,15 +19,19 @@ function ChatroomUsername(props) {
     const handleClick = () => {
         setUsername(tempuser)
         console.log('Username is', tempuser);
-        navigate("/");
+        navigate("/home");
     };
-
     
+
     return (
-    <div>
-        <h2> Choose a username </h2>
-        <input type="text" id="username" name="username" onChange={handleChange}/>
-        <button onClick={handleClick}>Submit</button>
+    <div class="username-box">
+        <h2 class> Choose a username </h2>
+        <form>
+            <div class="user-box">
+                <input type="text" id="username" name="username" onChange={handleChange}/>
+                <Button variant="success" onClick={handleClick}>Submit</Button>
+            </div>
+        </form>
     </div>
     );
 }
