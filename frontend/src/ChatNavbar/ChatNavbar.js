@@ -10,7 +10,7 @@ const name  = props.name
     <div className="navbar">
       <ul className="navList">
       <li className="navItems backHome">
-          <Link to="/" className="navLink">
+          <Link to="/home" className="navLink">
             <div className="fas fa-home"></div>
             <div>Home</div>
           </Link>
@@ -20,7 +20,7 @@ const name  = props.name
           <p className="navName">{name}</p>
         </li>
         <li className='navItems logout'>
-        <Link to="/home" className="navLink">
+        <Link to="/" className="navLink">
             <div className="fas fa-right-from-bracket"></div>
             Logout
           </Link>
