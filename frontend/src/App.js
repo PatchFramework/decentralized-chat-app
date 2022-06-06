@@ -1,10 +1,10 @@
 import './App.css';
 import Gun from 'gun'
-import { useReducer, useEffect } from 'react';
+import { useReducer, useEffect, useState } from 'react';
 import ChatRoom from './ChatRoom/ChatRoom';
 import Selector from './ChatSelector/Selector';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import ChatroomUsername from './ChatUsername/ChatUsername';
 
 const gun = Gun({
   peers: ['http:localhost:4050/gun'] // access relay node peer from relay-server.js
@@ -20,6 +20,9 @@ function App() {
     }
   }
   const [state, dispatch] = useReducer(addRoom, roomState)
+
+  const [username, setUsername] = useState([]);
+
 
   useEffect(() => {
     // loop through the "chatrooms" sub-nodes in the DB and add all rooms
@@ -38,7 +41,10 @@ function App() {
             <Selector availableRooms={state} />
           } />
           <Route path="/chatroom/:roomId" exact element={
-            <ChatRoom gun={gun} />
+            <ChatRoom gun={gun} userobject={username}/>
+          } />
+          <Route path="/username" exact element={
+            <ChatroomUsername  usernameinput={setUsername} userobject={username} />
           } />
         </Routes>
       </BrowserRouter>

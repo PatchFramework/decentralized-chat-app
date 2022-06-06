@@ -12,6 +12,7 @@ import { useParams } from 'react-router-dom';
 function ChatRoom(props) {
     // get the requested room id from the URL parameters
     const { roomId } = useParams();
+    const username = props.userobject
     // save the database slot of the chatroom
     const chatroom = props.gun.get("chatrooms").get(roomId)
 
@@ -50,7 +51,7 @@ function ChatRoom(props) {
         <div className='ChatRoom'>
             <ChatNavbar name={roomId}/>
             <ChatHistory id="chatHistory" messages={state} userColors={userColors} />
-            <MessageForm gunRoom={chatroom} user={"Dieter"} />
+            <MessageForm gunRoom={chatroom} user={username} />
         </div>
     )
 }
