@@ -5,6 +5,7 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import { useEffect, useRef } from 'react'
+import "./MessageForm.css"
 
 const illegalValues = [undefined, ""]
 
@@ -42,7 +43,7 @@ function MessageForm(props) {
     }
 
     return (
-        <div>
+        <div className='messageForm'>
             <Form onSubmit={addMessage}>
             {alert && <Alert variant="danger" onClose={() => setAlert(false)} dismissible>Your input is not allowed.</Alert>}
                 <InputGroup className="mb-3">

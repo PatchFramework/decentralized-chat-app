@@ -1,0 +1,10 @@
+.messageForm {
+    height: 40px;
+}
+@media only screen and (max-width: 768px) {
+    .messageForm {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}

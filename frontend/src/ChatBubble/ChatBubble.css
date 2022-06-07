@@ -69,6 +69,6 @@
 @media only screen and (max-width: 768px) {
     .bubble-box {
         width: 250px;
-        margin: 7px 7px 7px 7px;
+        margin: 10px 10px 10px 10px;
     }
 }

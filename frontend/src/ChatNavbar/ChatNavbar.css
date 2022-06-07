@@ -67,7 +67,7 @@
     /* For mobile phones: */
     .navbar {
       width: 100vw;
-      height: auto;
+      height: 100px;
       margin-bottom: 5px;
     }
     .navList {
@@ -75,6 +75,7 @@
         flex-direction: column;
     }
     .navItems {
-        margin: 3px;
+        margin: 0px;
+        padding: 0px;
     }
   }

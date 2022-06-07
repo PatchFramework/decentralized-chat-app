@@ -15,7 +15,7 @@
 
 @media only screen and (max-width: 768px) {
   .scrollable-chat {
-    height: 75vh;
+    height: calc(100vh - 145px); /* 105px navbar and 40px messageForm */
     padding: 10px;
   }
 }
