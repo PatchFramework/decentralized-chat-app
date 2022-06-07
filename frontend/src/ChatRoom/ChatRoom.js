@@ -50,7 +50,7 @@ function ChatRoom(props) {
     return (
         <div className='ChatRoom'>
             <ChatNavbar name={roomId}/>
-            <ChatHistory id="chatHistory" messages={state} userColors={userColors} />
+            <ChatHistory id="chatHistory" messages={state} userColors={userColors} user={username}/>
             <MessageForm gunRoom={chatroom} user={username} />
         </div>
     )

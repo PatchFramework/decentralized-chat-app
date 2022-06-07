@@ -27,7 +27,7 @@ function ChatHistory(props) {
                 {sortedMessages && sortedMessages.map((v, k) => {
                     test++
                     if (v.data) {
-                        return <ChatBubble key={k} sender={v.sender} txt={v.data} time={TimeConverter(v.time)} isSender={test % 2 == 0 ? true : false} userColors={props.userColors}/>
+                        return <ChatBubble key={k} sender={v.sender} txt={v.data} time={TimeConverter(v.time)} isSender={v.sender === props.user ? true : false} userColors={props.userColors}/>
                     }
                 })}
                 <div ref={endOfChatRef} />
