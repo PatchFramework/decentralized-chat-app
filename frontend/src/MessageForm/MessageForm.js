@@ -12,9 +12,9 @@ function MessageForm(props) {
     var v = "" //tracks the user input
     
     // store state of illegal input alert in state and in localStorage 
-    const [alert, setAlert] = useState(window.localStorage.getItem("wrongMessageAlert") || false) //show or hide bad input alert
+    const [alert, setAlert] = useState(JSON.parse(window.localStorage.getItem("wrongMessageAlert")) || false) //show or hide bad input alert
     useEffect(() => {
-        window.localStorage.setItem("wrongMessageAlert", alert)
+        window.localStorage.setItem("wrongMessageAlert", JSON.stringify(alert))
     }, [alert])
 
     //keep focus on the message input field on every rerender
