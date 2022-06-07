@@ -62,3 +62,19 @@
     padding-top: 2mm;
     font-size: x-large;
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .navbar {
+      width: 100vw;
+      height: auto;
+      margin-bottom: 5px;
+    }
+    .navList {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    .navItems {
+        margin: 3px;
+    }
+  }

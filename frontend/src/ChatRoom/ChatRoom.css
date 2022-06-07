@@ -4,3 +4,10 @@
     flex-direction: column;
     width: 70vw;
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .ChatRoom {
+      width: 100vw;
+    }
+  }

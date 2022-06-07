@@ -43,3 +43,11 @@
     padding: 0.5cm;
     text-align: left;
 }
+
+@media only screen and (max-width: 768px) {
+    .box {
+        width: 100vw;
+        height: 90vh;
+        margin-top: 5vh;
+    }
+}
