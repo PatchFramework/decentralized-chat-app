@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ChatroomUsername from './ChatUsername/ChatUsername';
 
 const gun = Gun({
-  peers: ['http:localhost:4050/gun'] // access relay node peer from relay-server.js
+  peers: ['http:localhost:4050/gun', "http://95.143.172.210:43261/gun"] // access relay node peer from relay-server.js
 })
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
 
   useEffect(() => {
     // loop through the "chatrooms" sub-nodes in the DB and add all rooms
-    gun.get("chatrooms").map().once((dbId, roomName) => {
+    gun.get("chatrooms").map().on((dbId, roomName) => {
       dispatch(roomName)
     })
   }, [])
